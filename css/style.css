@@ -233,12 +233,17 @@ CSS TABLE OF CONTENTS
         }
 
 /* GRID */
+
+        
+
+
         /* LARGE SCREENS ONLY */
         @media (min-width: 768px) {
             .row {
                 display: grid;
                 grid-template-columns:repeat(12, 1fr);
                 gap: 2em;
+                
               
                 
             }
@@ -253,6 +258,7 @@ CSS TABLE OF CONTENTS
             .row > * {
                 margin-bottom: var(--gridgap);
                 margin-top: var(--gridgap);
+                
             }
 
 
@@ -501,6 +507,77 @@ a {
 }
 }
 
+
+
+
+/* TOGGLE SWITCH DAY TO NIGHT */
+
+input[type="checkbox"] {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: red;
+    outline: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: translateX(100%);
+    background: #fff;
+  }
+  
+  input[type="checkbox"]:checked {
+    background: #00ed64;
+  }
+  
+
+.bottomleft {
+    position: fixed;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+    padding: 16px;
+  }
+.topleft {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.topright {
+    position: fixed;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.bottomright {
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+
+
+
 /* IF TOGGLE MENU DISPLAY LOGO ON LEFT AND MENU ON RIGHT ON ALL SCREENS */
 .site-header:has(.toggle-menu) {
 display: flex;
@@ -556,12 +633,21 @@ padding: var(--unit-large) var(--unit-small);
 background-color: var(--color-hero-background);
 color: var(--color-hero-text);
 
+
+
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
 padding-top: calc(4em + var(--unit-large));
 
 h1, h2, h3 {
     color: var(--color-hero-headings);
+    
 }
+}
+
+.hero .row  {
+     display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
