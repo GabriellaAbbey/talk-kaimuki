@@ -47,9 +47,9 @@ CSS TABLE OF CONTENTS
 
     /* THESES ARE MY COLORS */
     
-        --color-body-background: rgb(255 255 255);
-        --color-text-body: rgb(0 0 0 / .8);
-        --color-text-headings: rgb(0 0 0 / 1);
+        --color-body-background: #3F8AC2;
+        --color-text-body: #F0E7D2;
+        --color-text-headings: #F0E7D2;
 
         --color-links: blue; 
         --color-links-hover: darkblue;
@@ -62,10 +62,10 @@ CSS TABLE OF CONTENTS
         --color-siteheader-links: var(--color-text-headings);
 
         --color-hero-background: rgb(100 100 100);
-        --color-hero-text: rgb(255 255 255 / .8);
-        --color-hero-headings: rgb(255 255 255 / 1);
+        --color-hero-text: #F0E7D2;
+        --color-hero-headings: #F0E7D2;
 
-        --color-sitefooter-background: rgb(100 100 100);
+        --color-sitefooter-background: #321F0E;
         --color-sitefooter-text: rgb(255 255 255 / .8);
         --color-sitefooter-headings: rgb(255 255 255 / 1);
         --color-sitefooter-links: rgb(255 255 255);
@@ -74,8 +74,8 @@ CSS TABLE OF CONTENTS
         --color-togglemenu-background: rgb(82, 194, 194);
 
     /* DEFINE ALL FONTS */
-        --font-body: system-ui, "Helvetica", Arial, sans-serif;
-        --font-headings: system-ui,Georgia, serif;
+        --font-body: "neuzeit-grotesk", sans-serif; 
+        --font-headings: "fields", serif;
 
         /* SIZING UNITS */
         --container-width: 1100px;
@@ -140,7 +140,13 @@ CSS TABLE OF CONTENTS
     /* TYPOGRAPHIC SCALE */
 
         .hero h1 {
-            font-size: 4em;
+            font-size: 8em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 2.5em
+
         }
         h1 {
 
@@ -148,7 +154,7 @@ CSS TABLE OF CONTENTS
             font-size: 3em;
 
             /* SET H1 LEADING */
-            line-height: 1;
+            line-height: 0;
         }
 
         h2 {
@@ -518,7 +524,7 @@ input[type="checkbox"] {
     height: 40px;
     -webkit-appearance: none;
     appearance: none;
-    background: red;
+    background: rgb(0, 81, 255);
     outline: none;
     border-radius: 2rem;
     cursor: pointer;
@@ -543,7 +549,7 @@ input[type="checkbox"] {
   }
   
   input[type="checkbox"]:checked {
-    background: #00ed64;
+    background: #ff7f07;
   }
   
 
@@ -630,8 +636,10 @@ padding: var(--unit-large) var(--unit-small);
 
 /* HERO SECTION */
 .hero {
-background-color: var(--color-hero-background);
-color: var(--color-hero-text);
+    background-image: url("../img/hero-background-day.png");
+    color: var(--color-hero-text);
+    background-size: cover;
+    height: 100vh;
 
 
 
