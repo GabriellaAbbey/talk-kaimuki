@@ -140,7 +140,7 @@ CSS TABLE OF CONTENTS
     /* TYPOGRAPHIC SCALE */
 
         .hero h1 {
-            font-size: 8em;
+            font-size: 3em;
             margin: 0;
         }
 
@@ -154,7 +154,7 @@ CSS TABLE OF CONTENTS
             font-size: 3em;
 
             /* SET H1 LEADING */
-            line-height: 0;
+            line-height: .6;
         }
 
         h2 {
@@ -388,7 +388,6 @@ a {
 }
 
 }
-
 }
 
 /* TOGGLE MENU */
@@ -584,6 +583,9 @@ input[type="checkbox"] {
 
 
 
+
+
+
 /* IF TOGGLE MENU DISPLAY LOGO ON LEFT AND MENU ON RIGHT ON ALL SCREENS */
 .site-header:has(.toggle-menu) {
 display: flex;
@@ -651,13 +653,34 @@ h1, h2, h3 {
     
 }
 }
+.hero {
+    align-items: center;
+    border: 1px solid red;
+
+}
 
 .hero .row  {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid red;
     
 }
+/* HELPER CLASSES */
+
+.rightaligned {
+    border: 1px solid yellow;
+    text-align: right;
+
+}
+
+.stacked-title {
+    display: block;
+    font-size: 3em; /* Adjust font size as needed */
+  
+}
+
+
 
 
 /* SITE FOOTER */
@@ -789,3 +812,67 @@ scroll-behavior: smooth;
   .zoomup[data-viewstate="active"] {
     scale: 1;
   }
+
+
+
+
+  /* TOGGLE BUTTON AND BACKGROUNDHERO STUFF */
+
+  /* Slider Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  
+  
+  
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: blue; /* Blue for light theme */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Light theme button (blue) */
+.light-theme #toggle-button:checked + .slider {
+    background-color: blue; /* Blue color */
+}
+
+/* Dark theme button (orange) */
+.dark-theme #toggle-button:checked + .slider {
+    background-color: #f76c0e; /* Orange color */
+}
