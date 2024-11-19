@@ -528,7 +528,7 @@ a {
     left: 16px;
     font-size: 18px;
     padding: 16px;
-  }
+}
 .topleft {
     position: fixed;
     top: 8px;
@@ -757,8 +757,7 @@ a {
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 5px;
-    border: 1px solid red;
+    height: 34px;
   
 }
 
