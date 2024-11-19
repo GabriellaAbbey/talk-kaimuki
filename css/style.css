@@ -29,8 +29,10 @@ CSS TABLE OF CONTENTS
     # FOOTER
 
 # UI COMPONTENTS 
+    # TOGGLE-BUTTON
     # BUTTONS
     # CARDS
+    # ANIMATION
 # GLOBAL MEDIA (Making images responsive)
 
 --------------------------
@@ -515,42 +517,10 @@ a {
 
 
 
-/* TOGGLE SWITCH DAY TO NIGHT */
+/* ----------------------------*/
+/* ------ HELPER CLASSES ------*/
+/* ----------------------------*/
 
-input[type="checkbox"] {
-    position: relative;
-    width: 80px;
-    height: 40px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: rgb(0, 81, 255);
-    outline: none;
-    border-radius: 2rem;
-    cursor: pointer;
-    box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    transform: translateX(100%);
-    background: #fff;
-  }
-  
-  input[type="checkbox"]:checked {
-    background: #ff7f07;
-  }
-  
 
 .bottomleft {
     position: fixed;
@@ -580,6 +550,20 @@ input[type="checkbox"] {
     font-size: 18px;
     padding: 16px;
 }
+
+.rightaligned {
+    border: 1px solid yellow;
+    text-align: right;
+
+}
+
+.stacked-title {
+    display: block;
+    font-size: 3em; /* Adjust font size as needed */
+  
+}
+
+
 
 
 
@@ -637,11 +621,20 @@ padding: var(--unit-large) var(--unit-small);
 }
 
 /* HERO SECTION */
-.hero {
+.day-content.hero {
     background-image: url("../img/hero-background-day.png");
     color: var(--color-hero-text);
     background-size: cover;
     height: 100vh;
+}
+
+.night-content.hero {
+    background-image: url("../img/hero-background-night.png");
+    color: var(--color-hero-text);
+    background-size: cover;
+    height: 100vh;
+}
+
 
 
 
@@ -652,7 +645,8 @@ h1, h2, h3 {
     color: var(--color-hero-headings);
     
 }
-}
+
+
 .hero {
     align-items: center;
     border: 1px solid red;
@@ -666,22 +660,6 @@ h1, h2, h3 {
     border: 1px solid red;
     
 }
-/* HELPER CLASSES */
-
-.rightaligned {
-    border: 1px solid yellow;
-    text-align: right;
-
-}
-
-.stacked-title {
-    display: block;
-    font-size: 3em; /* Adjust font size as needed */
-  
-}
-
-
-
 
 /* SITE FOOTER */
 .site-footer {
@@ -771,7 +749,78 @@ a {
 
 
 
+/* ----------------------------
+---TOGGLE SWITCH DAY TO NIGHT--
+---------------------------- */
 
+.switcher {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 5px;
+    border: 1px solid red;
+  
+}
+
+.switcher input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    border-radius: 34px;
+    background-color: blue;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input[type="checkbox"]:checked + .slider {
+    background-color: orange; /* Blue for light theme */
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+/* TOGGLE BETWEEN DAY + NIGHT CONTENT */
+
+.day-content {
+    display: block; /* Default state */
+}
+
+.night-content {
+    display: none; /* Default state */
+}
+
+/* ALLOWS DAY AND NIGHT CONTENT TO BE TOGGLED*/
+body:has(input[type="checkbox"]:checked) {
+  
+  .day-content {
+    display: none;
+  }
+  .night-content {
+    display: block;
+  }
+}
 
  /* --------------------------
 ------ ANIMATION ---------
@@ -812,67 +861,3 @@ scroll-behavior: smooth;
   .zoomup[data-viewstate="active"] {
     scale: 1;
   }
-
-
-
-
-  /* TOGGLE BUTTON AND BACKGROUNDHERO STUFF */
-
-  /* Slider Styles */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  
-  
-  
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-}
-
-input:checked + .slider {
-    background-color: blue; /* Blue for light theme */
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-/* Light theme button (blue) */
-.light-theme #toggle-button:checked + .slider {
-    background-color: blue; /* Blue color */
-}
-
-/* Dark theme button (orange) */
-.dark-theme #toggle-button:checked + .slider {
-    background-color: #f76c0e; /* Orange color */
-}

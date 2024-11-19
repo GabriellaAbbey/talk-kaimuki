@@ -37,17 +37,3 @@ mytargets.forEach((el) => {
     myobserver.observe(el);
 });
 
-
-
-
-// TOGGLE BACKROUND AND BUTTON//
-
-function toggleText() {
-  const pTag = document.getElementById('toggle-text');
-  // Check if checkbox is checked or unchecked and change the text
-  if (document.getElementById('switch').checked) {
-      pTag.textContent = "The art of coffee by day, and something new by night!";
-  } else {
-      pTag.textContent = "The art of coffee by day.";
-  }
-}
