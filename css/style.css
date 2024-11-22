@@ -49,7 +49,8 @@ CSS TABLE OF CONTENTS
 
     /* THESES ARE MY COLORS */
     
-        --color-body-background: #3F8AC2;
+        --color-body-day-background: #3F8AC2;
+        --color-body-night-background: #321F0E;
         --color-text-body: #F0E7D2;
         --color-text-headings: #F0E7D2;
 
@@ -106,7 +107,7 @@ CSS TABLE OF CONTENTS
     body {
         color: var(--color-text-body);
     /* SET THE COLOR OF THE BACKGROUND */
-        background-color: var(--color-body-background);
+        background-color: var(--color-body-day-background);
     }
      /* SET THE COLOR OF HEADINGS */
     h1, h2, h3 {
@@ -661,6 +662,16 @@ h1, h2, h3 {
     
 }
 
+
+
+/* SECTION 1 */
+
+section.day-content {
+    background-color: var(--color-body-day-background);
+}
+section.night-content {
+    background-color: var(--color-body-night-background);
+}
 /* SITE FOOTER */
 .site-footer {
 background-color: var(--color-sitefooter-background);
