@@ -51,6 +51,7 @@ CSS TABLE OF CONTENTS
     
         --color-body-day-background: #3F8AC2;
         --color-body-night-background: #321F0E;
+        --color-body-night-background-2: #F28238;
         --color-text-body: #F0E7D2;
         --color-text-headings: #F0E7D2;
 
@@ -98,7 +99,7 @@ CSS TABLE OF CONTENTS
     }
     
     /* REMOVE THE DEAULT 8px MARGIN ON BODY*/
-    body {margin:0}
+    body {margin:0;}
 
 
 /* GLOBAL COLORS */
@@ -553,7 +554,6 @@ a {
 }
 
 .rightaligned {
-    border: 1px solid yellow;
     text-align: right;
 
 }
@@ -564,6 +564,11 @@ a {
   
 }
 
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -610,7 +615,7 @@ z-index: 100;
 
 
 /* SITE MAIN */
-.site-main {
+.site-main {   overflow: hidden;
 
 }
 
@@ -636,7 +641,24 @@ padding: var(--unit-large) var(--unit-small);
     height: 100vh;
 }
 
+/* MENU SECTION */
+.left{
+    transform: translate(-9em,0 );
+    
+}
+.right {
+    transform: translate(9em,0 );
+}
 
+.day-menu {
+    scale: 1.2;
+}
+
+/* LIGHTS SECTION */
+
+.lights {
+   scale: 1.1;
+}
 
 
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
@@ -650,7 +672,7 @@ h1, h2, h3 {
 
 .hero {
     align-items: center;
-    border: 1px solid red;
+ 
 
 }
 
@@ -658,13 +680,12 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
     
 }
 
 
 
-/* SECTION 1 */
+/* SECTION COLORS*/
 
 section.day-content {
     background-color: var(--color-body-day-background);
@@ -672,6 +693,10 @@ section.day-content {
 section.night-content {
     background-color: var(--color-body-night-background);
 }
+#lights.night-content {
+    background-color: var(--color-body-night-background-2);
+}
+
 /* SITE FOOTER */
 .site-footer {
 background-color: var(--color-sitefooter-background);
