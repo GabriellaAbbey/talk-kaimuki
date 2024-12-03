@@ -640,7 +640,7 @@ padding: var(--unit-large) var(--unit-small);
 
 
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
-padding-top: calc(4em + var(--unit-large));
+/* padding-top: calc(4em + var(--unit-large)); */
 
 h1, h2, h3 {
     color: var(--color-hero-headings);
