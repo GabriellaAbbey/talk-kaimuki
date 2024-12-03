@@ -654,6 +654,14 @@ padding: var(--unit-large) var(--unit-small);
     scale: 1.2;
 }
 
+.coffeenow {
+    position: absolute;
+    transform: translate(0, 250px);
+    z-index: 1;
+    scale: 2.5;
+
+}
+
 /* LIGHTS SECTION */
 
 .lights {
@@ -891,8 +899,10 @@ scroll-behavior: smooth;
   }
   
   .zoomup {
-    scale: 0;
+    scale: .90;
   }
   .zoomup[data-viewstate="active"] {
     scale: 1;
+   
+
   }
