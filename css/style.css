@@ -177,6 +177,9 @@ CSS TABLE OF CONTENTS
             /* SET H1 LEADING */
             line-height: 1.3;
         }
+        h4 {
+            font-size: ;
+        }
 
         p {
             max-width: 65ch;
@@ -667,6 +670,22 @@ padding: var(--unit-large) var(--unit-small);
 .lights {
    scale: 1.1;
 }
+
+
+/* EVENTS SECTION */
+.card {
+    border: 3px solid var(--color-hero-text);
+    border-radius: 20px;
+    height: 800px;
+    width: 500px;
+    padding: 3em;
+}
+.poster-info {
+
+}
+
+
+
 
 
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
