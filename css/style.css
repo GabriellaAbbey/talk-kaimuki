@@ -787,6 +787,79 @@ section.night-content {
     background-color: #F28238;
     /* background:linear-gradient(#F28238,#321F0E); */
 }
+
+
+/* ABOUT SECTION */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .card_container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex: 1;
+  }
+  .card_container .card {
+    background-color: #D14132;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    flex: 1;
+    height: 400px;
+    margin: 0 5px;
+    border-radius: 0 200px 200px 0;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.3s all ease;
+  }
+  .card_container .card2 {
+    background-color:#F28238;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    flex: 1;
+    height: 400px;
+    margin: 0 5px;
+    border-radius: 200px 0 0 200px;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.3s all ease;
+  }
+  /* .container .card img {
+    width: 100%;
+    height: 100%;
+  
+  } */
+  .card_container .card:hover {
+    img {
+      display: none;
+    }
+    flex: 2;
+    background-image: url('../img/team.svg')
+  }
+  
+  .card_container .card2:hover {
+    img {
+      display: none;
+    }
+    flex: 2;
+     background-image: url('https://placehold.co/600x400')
+  }
+  
+
+
+
 /* SITE FOOTER */
 
 
@@ -897,8 +970,8 @@ a {
 .switcher {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 180px;
+    height: 75px;
   
 }
 
@@ -916,28 +989,52 @@ a {
     right: 0;
     bottom: 0;
     transition: 0.4s;
-    border-radius: 34px;
-    background-color: blue;
+    border-radius: 60px;
+    background-color: var(--color-body-day-background);
+    background-image: url('../img/day-toggle-bg.svg');
+    background-size: cover;
+    border: 2px solid white;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
+    height: 53px;
+    width: 60px;
+    /* border-radius: 50%; */
+    left: 15px;
+    bottom: 8px;
+    /* background-color: white; */
+    background-image: url('../img/day-toggle-switch.svg');
+    background-size: contain;
     transition: 0.4s;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 input[type="checkbox"]:checked + .slider {
-    background-color: orange; /* Blue for light theme */
+  
+    background-color: var(--color-body-night-background-2);
+    background-image: url('../img/night-toggle-bg.svg');
+    background-size: contain;
+    border: 2px solid white;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Blue for light theme */
 }
 
 input[type="checkbox"]:checked + .slider:before {
-    transform: translateX(26px);
+    height: 59px;
+    width: 42px;
+    transform: translateX(100px);
+    background-image: url('../img/night-toggle-switch.svg');
+    background-size: contain;
+    background-position: center;
+    background-size:cover;
 }
 
 

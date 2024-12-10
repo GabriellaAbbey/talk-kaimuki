@@ -37,3 +37,11 @@ mytargets.forEach((el) => {
     myobserver.observe(el);
 });
 
+
+// ABOUT CARDS//
+
+const images = document.querySelectorAll(".container .card img");
+
+images.forEach(
+  (img, key) => (img.src = `https://source.unsplash.com/random?sig=${key}`)
+);
