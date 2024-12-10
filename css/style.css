@@ -308,10 +308,12 @@ CSS TABLE OF CONTENTS
 
 } 
 .row > * {
-    margin-bottom: var(--gridgap);
+    /* margin-bottom: var(--gridgap); */
     margin-top: var(--gridgap);
-    
+
 }
+
+
 .row.work-on-mobile {
     display: grid;
     grid-template-columns:repeat(12, 1fr);
@@ -983,6 +985,13 @@ section.night-content {
 .site-footer .container {
     margin-bottom: 0px;
  }
+ .site-footer.night-content {
+    .one-half {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+ }
 
  .site-footer img {
     margin: 0;
@@ -990,7 +999,7 @@ section.night-content {
 .site-footer {
 background-color: var(--color-sitefooter-background);
 color: var(--color-sitefooter-text);
-padding: var(--unit-small);
+padding-top: var(--unit-large);
 
 
 
@@ -1014,6 +1023,7 @@ a {
 .cake {
     scale: 1.1;
     padding-top: 6em;
+    transform-origin: right bottom;
 }
 
 
