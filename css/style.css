@@ -354,7 +354,7 @@ background-color: var(--color-siteheader-background);
 }
 
 /* ADD SOME GENERAL SPACING AROUND THE HEADER */
-padding: var(--unit-small);
+/* padding: var(--unit-small); */
 
 /* REMOVE LINK UNDERLINES IN HEADER */
 a {
@@ -663,6 +663,36 @@ padding: var(--unit-large) var(--unit-small);
     height: 100vh;
 }
 
+@media (max-width: 768px) {
+.day-content.hero .container {
+    padding-top: 13em;
+}
+
+.day-content.hero h1, .day-content.hero p {
+    scale: .8;
+    line-height: 1em;
+    
+}
+
+
+.night-content.hero .container {
+    padding-top: 13em;
+}
+
+.night-content.hero h1, .night-content.hero p {
+    scale: .8;
+    line-height: 1em;
+    
+}
+
+
+}
+
+
+
+
+
+
 /* MENU SECTION */
 .left{
     transform: translate(-9em,0 );
@@ -687,9 +717,20 @@ padding: var(--unit-large) var(--unit-small);
     /* scale: 2.5; */
 
 }
+.talktails {
+    position: absolute;
+    /* transform: translate(0, 250px); */
+    top: 30%;
+    left: 15%;
+    z-index: 1;
+    width: 70%;
+    /* scale: 2.5; */
+
+}
 
 
 .fruit {
+    padding: 1em;
     scale: 1.5;
 }
 
@@ -711,20 +752,9 @@ padding: var(--unit-large) var(--unit-small);
 
 
 /* EVENTS SECTION */
-/* .card {
-    border: 3px solid var(--color-hero-text);
-    border-radius: 20px;
-    height: 800px;
-    width: 500px;
-    padding: 3em;
+#events.day-content .container {
+    padding-top: 4em;
 }
-.poster-info h3 {
-    margin: 0;
-   
-}
- */
-
-
 
 
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
@@ -791,13 +821,8 @@ section.night-content {
 
 /* ABOUT SECTION */
 
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  .card_container {
+/* NIGHT CONTENT CARDS */
+.night-content .card_container {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
@@ -806,57 +831,149 @@ section.night-content {
     vertical-align: middle;
     flex: 1;
   }
-  .card_container .card {
+  .night-content .card_container .card {
     background-color: #D14132;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     flex: 1;
     height: 400px;
     margin: 0 5px;
     border-radius: 0 200px 200px 0;
     cursor: pointer;
-  
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: 0.3s all ease;
+    background-image: url('../img/who.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    img {
+        display: none;
+        transform-origin: 60% 62% ;
+          
+    }
   }
-  .card_container .card2 {
-    background-color:#F28238;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+  .night-content .card_container .card2 {
+    background-color:#3F8AC2;
     flex: 1;
     height: 400px;
     margin: 0 5px;
     border-radius: 200px 0 0 200px;
     cursor: pointer;
-  
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: 0.3s all ease;
-  }
-  /* .container .card img {
-    width: 100%;
-    height: 100%;
-  
-  } */
-  .card_container .card:hover {
+    background-image: url('../img/shaking.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
     img {
-      display: none;
-    }
-    flex: 2;
-    background-image: url('../img/team.svg')
+        display: none;
+        transform-origin: 80% 60% ;
+        
+      }
   }
   
-  .card_container .card2:hover {
+  .night-content .card_container .card:hover {
+    background-image: none;
+        img {
+            display:block;
+            scale: 2.5;
+        }
+      flex: 2;
+  }
+  
+  .night-content .card_container .card2:hover {
+    background-image: none;
     img {
-      display: none;
-    }
+        display:block;
+        scale: 2.5;
+  }
     flex: 2;
-     background-image: url('https://placehold.co/600x400')
+}
+
+
+/* DAY CONTENT CARDS */
+
+.day-content .card_container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex: 1;
+  }
+  .day-content .card_container .card {
+    background-color: #D14132;
+    flex: 1;
+    height: 400px;
+    margin: 0 5px;
+    border-radius: 0 200px 200px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    transition: 0.3s all ease;
+    background-image: url('../img/who.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    img {
+        display: none;
+        transform-origin: 60% 62% ;
+          
+    }
+  }
+  .day-content .card_container .card2 {
+    background-color:#F28238;
+    flex: 1;
+    height: 400px;
+    margin: 0 5px;
+    border-radius: 200px 0 0 200px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    transition: 0.3s all ease;
+    background-image: url('../img/talk-team.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    img {
+        display: none;
+        transform-origin: 50% 57% ;
+        
+      }
   }
   
+  .day-content .card_container .card:hover {
+    background-image: none;
+        img {
+            display:block;
+            scale: 2.5;
+        }
+      flex: 2;
+  }
+  
+  .day-content .card_container .card2:hover {
+    background-image: none;
+    img {
+        display:block;
+        scale: 2.5;
+  }
+    flex: 2;
+}
+
+
+
+
+
+
 
 
 
