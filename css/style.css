@@ -96,10 +96,12 @@ CSS TABLE OF CONTENTS
     /* CHANING BOX-SIZING FOR ALL TO BORDER-BOX */
     * {
         box-sizing: border-box;
+        
     }
     
     /* REMOVE THE DEAULT 8px MARGIN ON BODY*/
-    body {margin:0;}
+    body {margin:0;
+    }
 
 
 /* GLOBAL COLORS */
@@ -125,7 +127,9 @@ CSS TABLE OF CONTENTS
             color:var(--color-links-hover);
         }
     }
-    
+    .over {
+        overflow: hidden;
+    }
 /* GLOBAL TYPOGRAPHY */
 
     /* FONT FAMILY */
@@ -399,6 +403,7 @@ ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
 
 }
 
@@ -602,19 +607,22 @@ a {
 .site-header:has(.toggle-menu) {
 display: flex;
 justify-content: space-between;
+z-index: 1000;
 
 .site-logo {
 position: relative;
-z-index: 100;
 }
 
 }
 
-
+.on-top-of-hero {
+    position: relative;
+    z-index: 1000;
+}
 
 /* PLACE SITE HEADER ON TOP OF HERO ON LARGE SCREENS */
 .site-header.on-top-of-hero {
-    z-index: 10; /* A higher value than the image */
+    z-index: 1000; /* A higher value than the image */
 @media (min-width: 768px) {
 
     /* RENDER HEADER ON TOP OF HERO */
@@ -755,6 +763,11 @@ padding: var(--unit-large) var(--unit-small);
 #events.day-content .container {
     padding-top: 4em;
 }
+#events.night-content .event_cup {
+    scale:1.2;
+}
+
+
 @media (max-width:768px) {
     #events.day-content .left {
         transform: translate(-3em,0 );
@@ -766,6 +779,7 @@ padding: var(--unit-large) var(--unit-small);
     .event_cup {
         transform: translate(-3em,8em );
     }
+   
 
     #events.day-content {
         padding-bottom: 10em;
@@ -1072,6 +1086,7 @@ padding-top: var(--unit-large);
 
 
 
+
 h1, h2, h3 {
     color: var(--color-sitefooter-headings)
 }
@@ -1187,6 +1202,7 @@ a {
     display: inline-block;
     width: 180px;
     height: 75px;
+    
   
 }
 
@@ -1257,10 +1273,12 @@ input[type="checkbox"]:checked + .slider:before {
 
 .day-content {
     display: block; /* Default state */
+    overflow: hidden;
 }
 
 .night-content {
     display: none; /* Default state */
+    overflow: hidden;
 }
 
 /* ALLOWS DAY AND NIGHT CONTENT TO BE TOGGLED*/
