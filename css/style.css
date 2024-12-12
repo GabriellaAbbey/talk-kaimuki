@@ -642,8 +642,6 @@ z-index: 100;
 
 }
 
-
-
 /* SECTIONS */
 
 section {
@@ -757,6 +755,33 @@ padding: var(--unit-large) var(--unit-small);
 #events.day-content .container {
     padding-top: 4em;
 }
+@media (max-width:768px) {
+    #events.day-content .left {
+        transform: translate(-3em,0 );
+    }
+    .event_card {
+        scale: 1.5;
+        transform-origin: 10% 50%;
+    }
+    .event_cup {
+        transform: translate(-3em,8em );
+    }
+
+    #events.day-content {
+        padding-bottom: 10em;
+    }
+    #events.night-content .left {
+        transform: translate(-3em,0 );
+    }
+
+    #events.night-content {
+        padding-bottom: 10em;
+    }
+      
+       
+
+}
+
 
 
 /* ADDING MORE SPACEON ON ABSOLUTE HEADER */
@@ -823,6 +848,13 @@ section.night-content {
 
 /* ABOUT SECTION */
 
+
+/* ALLOWS CARDS TO BREAK OUT OF CONTAINER */
+.card_container {
+    margin:0 -5%;
+}
+
+
 /* NIGHT CONTENT CARDS */
 .night-content .card_container {
     display: flex;
@@ -887,6 +919,7 @@ section.night-content {
       flex: 2;
   }
   
+  
   .night-content .card_container .card2:hover {
     background-image: none;
     img {
@@ -894,6 +927,26 @@ section.night-content {
         scale: 2.5;
   }
     flex: 2;
+}
+@media (max-width:768px) {
+    .night-content .card_container .card:hover {
+          flex: 6;
+          img {
+            scale: 2;
+          }
+      }
+    .night-content .card_container .card2:hover {
+        flex: 6;
+        img {
+            scale: 2;
+            transform-origin: 40% 60%;
+        }
+    }
+
+  
+
+    
+      
 }
 
 
@@ -972,7 +1025,23 @@ section.night-content {
 }
 
 
-
+@media (max-width:768px) {
+    .day-content .card_container .card:hover {
+          flex: 6;
+          img {
+            scale: 2;
+          }
+      }
+    .day-content .card_container .card2:hover {
+        flex: 6;
+        img {
+            scale: 2;
+            transform-origin: 40% 60%;
+        }
+    }
+    
+      
+}
 
 
 
@@ -1025,8 +1094,27 @@ a {
     padding-top: 6em;
     transform-origin: right bottom;
 }
+.cake2 {
+   padding-top: 5.5em;
+}
 
 
+@media (max-width:768px) {
+    .cake {
+        scale: .9;
+        transform-origin: 0% center;
+        padding:0;
+        align-items: center;
+        padding-bottom: 8em;
+    }
+   
+    .cake2 {
+        padding:0;
+    }
+    .cake3 {
+        display: none;
+    }
+}
 
 /* --------------------------
 ------ UI COMPONENTS ---------
